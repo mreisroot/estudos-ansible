@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  tasks:
+  - name: Testando a primeira variável
+    debug:
+      msg: "HTTP PORT é {{ http_port }}"
+  - name: Testando a segunda variável
+    debug:
+      msg: "PKG é {{ pkg }}"
+...

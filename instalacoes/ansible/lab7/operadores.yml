@@ -1,0 +1,18 @@
+---
+- name: Realizar operacoes aritmeticas
+  hosts: ubuntu
+  vars:
+    num1: 10
+    num2: 5
+  tasks:
+    - name: "Calculations"
+      debug:
+        msg:
+          - "O valor de num1 é: {{ num1 }}"
+          - "O valor de num2 é: {{ num2 }}"
+          - "Multiplicado num1 por num2 é: {{ num1 * num2 }}"
+          - "Somando num1 com num2 é: {{ num1 + num2 }}"
+          - "Subtraindo num2 por num1 é: {{ num2 - num1 }}"
+          - "Divisão do num1 por num2 é: {{ num1 / num2 }}"
+          - "Check o resto da divisão: {{ num1 % num2 }}"
+...

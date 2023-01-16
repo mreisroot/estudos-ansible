@@ -1,0 +1,19 @@
+---
+- name: Saída com fact personalizado
+  hosts: ubuntu
+  tasks:
+  - name: registrar fact
+    shell: /bin/false
+    register: resultado
+    ignore_errors: True
+
+  - name: Executar caso falhar acima
+    debug: 
+      msg: date
+    when: resultado is failed
+
+  - name: Executar caso for sucesso
+    debug:
+      msg: "OK!"
+    when: resultado is succeeded
+...

@@ -1,0 +1,18 @@
+---
+- name: Coletar variaveis de um arquivo
+  hosts: localhost
+  vars_files: 
+    - variaveis.yml
+    - variaveis.json
+  gather_facts: false
+  tasks:
+  - name: ver variaveis
+    debug:
+      msg:
+      - "Meu nome é {{ NOME }}"
+      - "Este é o treinamento de {{ CURSO }}"
+      - "Estamos no falando sobre o capitulo {{ CAPITULO }}"
+      - "O valor de b é {{ b }}"
+      - "O segundo valor de b é {{ b[1] }}"
+      - "O valor de c é {{ c }}"
+...

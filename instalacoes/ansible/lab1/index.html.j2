@@ -1,0 +1,13 @@
+Ansible do zero a infraestrutura.
+</br>
+Server: {{ ansible_hostname }}
+</br>
+IP: {{ ansible_enp0s8.ipv4.address }}
+</br>
+Arquitetura: {{ ansible_architecture }}
+</br>
+Versao: {{ ansible_distribution_version }}
+</br>
+RAM: {{ ansible_memtotal_mb }}
+</br>
+CPU: {{ ansible_processor_vcpus }}

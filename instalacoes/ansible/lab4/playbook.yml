@@ -1,0 +1,10 @@
+---
+- hosts: deb
+  tasks:
+  - name: Coletar IPV4
+    debug:
+      msg:
+      - "Metodo 1 {{ ansible_enp0s8.ipv4.address }}"
+      - "Metodo 2 {{ ansible_enp0s8['ipv4']['address'] }}"
+      - "Metodo 3 {{ ansible_enp0s8['ipv4'].address }}"
+...

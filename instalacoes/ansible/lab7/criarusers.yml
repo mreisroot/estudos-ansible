@@ -1,0 +1,16 @@
+---
+- hosts: centos
+  become: yes
+  tasks:
+  - name: Garantir a presença de três usuários
+    user:
+      state: absent
+      createhome: yes
+      name: "{{ item.username }}"
+      groups: "{{ item.groups }}"
+      password: "{{ item.password }}"
+    loop:
+      - { username: 'dev_user', groups: 'vagrant', password: '$1$3d4s1kq4$3PFW6f7H3tHTKveE3Futi0'}
+      - { username: 'qa_user', groups: 'vagrant', password: '$1$d9.AzfdC$3TJMVqcoHzNORnJpvHLss.'}
+      - { username: 'prod_user', groups: 'root', password: '$1$UB4bR8/l$xXL3bvFEhe3hSM7h4viAN1'}
+...

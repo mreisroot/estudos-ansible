@@ -1,0 +1,22 @@
+---
+- name: Ansible tags
+  hosts: localhost
+  tasks:
+  - debug:
+      msg: "Esta é a primeira tarefa"
+    tags: 
+    - primeira
+    - never
+
+  - debug:
+      msg: "Esta é a segunda tarefa"
+    tags: segunda
+
+  - debug:
+      msg: "Esta é a terceira tarefa"
+    tags: terceira
+
+  - debug:
+      msg: "Esta é a quarta tarefa"
+    tags: quarta
+...

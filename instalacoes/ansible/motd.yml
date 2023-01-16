@@ -1,0 +1,9 @@
+---
+- name: role motd
+  hosts: centos
+  become: yes
+
+  roles:
+  - role: lab9
+    system_manager: admin@empresa.com
+...

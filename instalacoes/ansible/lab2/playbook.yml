@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars:
+    username: neo
+    password: matrix
+  tasks:
+  - name: Ver variáveis declaradas
+    debug:
+      msg: "usuario={{ username }} senha={{ password }}"
+...

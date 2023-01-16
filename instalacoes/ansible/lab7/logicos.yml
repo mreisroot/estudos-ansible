@@ -1,0 +1,19 @@
+---
+- name: Operacoes logicas
+  hosts: localhost
+  gather_facts: false
+  vars:
+    x: 10
+    y: 5
+    list: [10, 20, 30]
+  tasks:
+  - name: Operacoes logicas
+    debug:
+      msg:
+        - "O valor de x é {{ x }} e o valor de y é {{ y }}"
+        - "Nossa lista contém: {{ list }}"
+        - "x é menor que y e x está na lista: {{ x < y and x in list }}"
+        - "x é maior que y e x está na lista: {{ x > y and x in list }}"
+        - "x ou y está na lista: {{ x in list or y in list }}"
+        - "Quero ver a localização do item 3: {{ list[2] }}"
+...

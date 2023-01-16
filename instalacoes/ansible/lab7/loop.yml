@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Loop multiplo
+    loop: [1,2,3,4,5,6,7,8,9,10]
+    shell: echo {{ item }}
+    when: item > 5
+
+  - name: loop
+    debug:
+      msg: echo {{ item.um }} {{ item.dois }}
+    loop: 
+    - {um: 'valor1', dois: 'valor2'}    
+...

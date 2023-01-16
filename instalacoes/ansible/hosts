@@ -1,0 +1,9 @@
+[rpm]
+centos
+
+[deb]
+ubuntu
+
+[linux:children]
+rpm
+deb

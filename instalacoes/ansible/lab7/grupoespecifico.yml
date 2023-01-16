@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  remote_user: vagrant
+  tasks:
+  - name: Instalar servidor ftp quando o host fizer parte do grupo deb
+    apt:
+      name: vsftpd
+      update_cache: yes
+      state: latest
+    when: inventory_hostname in groups["deb"]
+...
